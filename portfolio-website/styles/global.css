@@ -1,0 +1,71 @@
+/* Global Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #010001;
+    color: #C9E4CA;
+    font-family: 'Google Sans', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #EE2E31;
+}
+
+/* First letter styling */
+.first-letter {
+    color: #EE2E31;
+}
+
+.content {
+    display: none;
+    animation: fadeIn 1s forwards;
+    overflow-y: auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.exp-header,
+.leadership-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.company,
+.company-desc,
+.organization {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.company-desc {
+    font-style: italic;
+    opacity: 0.8;
+    margin: 5px 0 15px 0;
+}
+
+.experience-item,
+.leadership-item {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(201, 228, 202, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #EE2E31;
+}
+
+.leadership-header {
+    margin-bottom: 10px;
+}

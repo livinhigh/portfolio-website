@@ -1,0 +1,48 @@
+/* Loading Screen Styles */
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Google Sans Code', monospace;
+    font-size: 24px;
+    opacity: 1;
+    transition: opacity 1s;
+    padding: 48px 32px;
+    overflow: hidden;
+}
+
+.loading::before,
+.loading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 120px;
+    pointer-events: none;
+}
+
+.loading::before {
+    top: 0;
+    background: linear-gradient(180deg, #010001 0%, rgba(1, 0, 1, 0) 100%);
+}
+
+.loading::after {
+    bottom: 0;
+    background: linear-gradient(0deg, #010001 0%, rgba(1, 0, 1, 0) 100%);
+}
+
+.fade {
+    opacity: 0;
+}
+
+.loading span {
+    display: block;
+    width: min(90vw, 760px);
+    text-align: left;
+    white-space: pre-wrap;
+}

@@ -1,0 +1,31 @@
+/* Projects & Achievements Styles */
+.project-item,
+.achievement-item {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(201, 228, 202, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #EE2E31;
+}
+
+.project-header,
+.achievement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.year {
+    color: #EE2E31;
+    font-weight: bold;
+    font-family: 'Google Sans Code', monospace;
+}
+
+.tech-stack,
+.location {
+    font-family: 'Google Sans Code', monospace;
+    color: #EE2E31;
+    margin: 5px 0 10px 0;
+}

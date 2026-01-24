@@ -1,0 +1,36 @@
+/* Contact Section Styles */
+.contact-section {
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #C9E4CA;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    background-color: rgba(201, 228, 202, 0.05);
+    border-radius: 8px;
+    border: 1px solid #EE2E31;
+    transition: all 0.3s;
+    min-width: 400px;
+}
+
+.contact-link:hover {
+    background-color: rgba(238, 46, 49, 0.2);
+    transform: translateY(-2px);
+}
+
+.icon {
+    font-size: 1.5rem;
+}

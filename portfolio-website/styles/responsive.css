@@ -1,0 +1,101 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .hero {
+        padding: 0 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        min-height: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        margin-top: 30px;
+        gap: 10px;
+    }
+    
+    .hero-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .modal-content {
+        padding: 40px 20px 40px;
+    }
+    
+    .modal-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+    }
+    
+    .exp-header,
+    .edu-header,
+    .project-header,
+    .achievement-header,
+    .leadership-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .experience-item,
+    .education-item,
+    .project-item,
+    .achievement-item,
+    .leadership-item {
+        padding: 15px;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-link {
+        min-width: auto;
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 12px 20px;
+    }
+    
+    .icon {
+        font-size: 1.2rem;
+    }
+    
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 20px;
+    }
+}

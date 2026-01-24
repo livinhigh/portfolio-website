@@ -1,0 +1,55 @@
+// Typing animation for hero section
+const roles = [
+    "Software Engineer",
+    ".NET Developer",
+    "SQL Developer",
+    "Backend Developer",
+    "Flutter Developer",
+    "NodeJS Developer",
+    "Data Science and AI Student"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typedTextElement;
+
+function typeRole() {
+    if (!typedTextElement) {
+        typedTextElement = document.getElementById('typed-text');
+        if (!typedTextElement) {
+            setTimeout(typeRole, 100);
+            return;
+        }
+    }
+
+    const currentRole = roles[roleIndex];
+    
+    if (isDeleting) {
+        typedTextElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typedTextElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+        typeSpeed = 2000; // Pause at end
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typeSpeed = 500; // Pause before typing next role
+    }
+
+    setTimeout(typeRole, typeSpeed);
+}
+
+// Start typing animation when content is visible
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', typeRole);
+} else {
+    typeRole();
+}

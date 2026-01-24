@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&family=Google+Sans&display=swap" rel="stylesheet">
+    <!-- Global & Base Styles -->
+    <link rel="stylesheet" href="styles/global.css">
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="styles/loading.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/experience.css">
+    <link rel="stylesheet" href="styles/education.css">
+    <link rel="stylesheet" href="styles/education-modal.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/skills.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/transition.css">
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <div class="loading" id="loading">
+        <span id="loading-text"></span>
+    </div>
+    <div class="content" id="content">
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">< \ IVAN JOSEPH THOMAS ></h1>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <h1><span class="first-letter">I</span> am a <span id="typed-text"></span><span class="cursor">|</span></h1>
+            <p class="subtitle"><span class="first-letter">B</span>uilding scalable AI-powered solutions | <span class="first-letter">D</span>ubai, UAE</p>
+            <div class="hero-buttons">
+                <button class="hero-btn" onclick="openExperiencePage()">Professional Experience</button>
+                <button class="hero-btn" onclick="openEducationPage()">Education & Skills</button>
+                <button class="hero-btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">Projects & Achievements</button>
+                <button class="hero-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Me</button>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2><span class="first-letter">P</span>rojects</h2>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Computer Use AI Agents</h3>
+                    <span class="year">2025</span>
+                </div>
+                <p class="tech-stack">FastAPI, Docker, Claude</p>
+                <ul>
+                    <li><span class="first-letter">D</span>eveloped a computer use agent by using FastAPI instead of Streamlit for concurrent processing</li>
+                    <li><span class="first-letter">U</span>sed Claude models to process screenshots and reply back with mouse events or other computer tools to be used to achieve a particular task</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Blitzkrieg Payment System</h3>
+                    <span class="year">2020</span>
+                </div>
+                <p class="tech-stack">Offline Payment System</p>
+                <ul>
+                    <li><span class="first-letter">D</span>eveloped "Blitzkrieg" a production-ready Offline Payment POC enabling transactions without internet</li>
+                    <li><span class="first-letter">R</span>ecognized for potential business impact in financial inclusion for remote areas</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2><span class="first-letter">G</span>et In Touch</h2>
+            
+            <div class="contact-container">
+                <a href="https://linkedin.com/in/ivanjt" target="_blank" class="contact-link">
+                    <span class="icon">💼</span>
+                    <span>linkedin.com/in/ivanjt</span>
+                </a>
+                
+                <a href="https://github.com/livinhigh" target="_blank" class="contact-link">
+                    <span class="icon">🔗</span>
+                    <span>github.com/livinhigh</span>
+                </a>
+                
+                <a href="mailto:ivanjthomas@gmail.com" class="contact-link">
+                    <span class="icon">📧</span>
+                    <span>ivanjthomas@gmail.com</span>
+                </a>
+                
+                <div class="contact-link">
+                    <span class="icon">📍</span>
+                    <span>Dubai, UAE | (+971) 52 429 7496</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p><span class="first-letter">©</span> 2026 Ivan Joseph Thomas. All rights reserved.</p>
+        </footer>
+
+        <!-- Transition background modal -->
+        <div class="transition-modal" id="transitionModal" aria-hidden="true">
+            <div class="transition-content"></div>
+        </div>
+        <div class="modal" id="experienceModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><span class="first-letter">P</span>rofessional Experience</h2>
+                    <button class="close-modal" onclick="closeExperiencePage()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <h3>Software Engineer (CINDE AI)</h3>
+                            <span class="duration">2022 - Present</span>
+                        </div>
+                        <p class="company">SymphonyAI UAE / India</p>
+                        <p class="company-desc">Global enterprise AI SaaS company serving retail and financial sectors</p>
+                        <ul>
+                            <li><span class="first-letter">O</span>wned and managed highly critical, scalable .NET APIs serving global retail clients, ensuring 99.9% uptime during peak high-traffic events.</li>
+                            <li><span class="first-letter">E</span>ngineered an infinitely customizable dashboard, reducing data computation time by 60% (from 10s to 4s) through dynamic SQL generation and prebatching techniques in Snowflake.</li>
+                            <li><span class="first-letter">A</span>utomated manual deployment pipelines, reducing release cycle time from 4 hours to 15 minutes using Powershell and Python.</li>
+                            <li><span class="first-letter">R</span>edesigned backend retrieval systems using Redis caching strategies, improving customer-facing application speed by 90%.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <h3>Founding Engineer, Lead Software Developer</h3>
+                            <span class="duration">2020 - 2021</span>
+                        </div>
+                        <p class="company">Peldano (Remote)</p>
+                        <p class="company-desc">Hyper-local delivery startup ecosystem</p>
+                        <ul>
+                            <li><span class="first-letter">J</span>oined as the first Founding Engineer and rapidly scaled the product, eventually hiring and leading a 5-member cross-functional technical team.</li>
+                            <li><span class="first-letter">A</span>rchitected using Flutter and NodeJs a robust multi-platform delivery ecosystem (iOS, Android, Web) that successfully scaled to support 500,000+ active users.</li>
+                            <li><span class="first-letter">O</span>ptimized critical logistics algorithms for Delivery Agent Matching and Geospatial Distance Calculation, reducing delivery assignment latency and improving fleet utilization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Experience Modal -->
+        <div class="modal" id="experienceModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><span class="first-letter">P</span>rofessional Experience</h2>
+                    <button class="close-modal" onclick="closeExperiencePage()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <h3>Software Engineer (CINDE AI)</h3>
+                            <span class="duration">2022 - Present</span>
+                        </div>
+                        <p class="company">SymphonyAI UAE / India</p>
+                        <p class="company-desc">Global enterprise AI SaaS company serving retail and financial sectors</p>
+                        <ul>
+                            <li><span class="first-letter">O</span>wned and managed highly critical, scalable .NET APIs serving global retail clients, ensuring 99.9% uptime during peak high-traffic events.</li>
+                            <li><span class="first-letter">E</span>ngineered an infinitely customizable dashboard, reducing data computation time by 60% (from 10s to 4s) through dynamic SQL generation and prebatching techniques in Snowflake.</li>
+                            <li><span class="first-letter">A</span>utomated manual deployment pipelines, reducing release cycle time from 4 hours to 15 minutes using Powershell and Python.</li>
+                            <li><span class="first-letter">R</span>edesigned backend retrieval systems using Redis caching strategies, improving customer-facing application speed by 90%.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <h3>Founding Engineer, Lead Software Developer</h3>
+                            <span class="duration">2020 - 2021</span>
+                        </div>
+                        <p class="company">Peldano (Remote)</p>
+                        <p class="company-desc">Hyper-local delivery startup ecosystem</p>
+                        <ul>
+                            <li><span class="first-letter">J</span>oined as the first Founding Engineer and rapidly scaled the product, eventually hiring and leading a 5-member cross-functional technical team.</li>
+                            <li><span class="first-letter">A</span>rchitected using Flutter and NodeJs a robust multi-platform delivery ecosystem (iOS, Android, Web) that successfully scaled to support 500,000+ active users.</li>
+                            <li><span class="first-letter">O</span>ptimized critical logistics algorithms for Delivery Agent Matching and Geospatial Distance Calculation, reducing delivery assignment latency and improving fleet utilization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education & Skills Modal -->
+        <div class="education-modal" id="educationModal">
+            <div class="education-modal-content">
+                <div class="education-modal-header">
+                    <h2><span class="first-letter">E</span>ducation & <span class="first-letter">S</span>kills</h2>
+                    <button class="close-education-modal" onclick="closeEducationPage()">&times;</button>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div class="modal-tabs">
+                    <button class="modal-tab active" data-tab="education-content">Education</button>
+                    <button class="modal-tab" data-tab="certifications-content">Certifications</button>
+                    <button class="modal-tab" data-tab="leadership-content">Leadership</button>
+                    <button class="modal-tab" data-tab="skills-content">Tech Stack</button>
+                </div>
+
+                <div class="education-modal-body">
+                    <!-- Education Tab -->
+                    <div id="education-content" class="modal-tab-content active">
+                        <div class="education-item">
+                            <div class="edu-header">
+                                <h3>MSc Data Science and Artificial Intelligence</h3>
+                                <span class="duration">2025 – 2026 (Currently Pursuing)</span>
+                            </div>
+                            <p class="institution">Middlesex University Dubai, UAE</p>
+                            <ul>
+                                <li><span class="first-letter">S</span>pecialization: Intelligence in Software Systems using AI</li>
+                                <li><span class="first-letter">O</span>n track to receive UAE Golden Visa upon graduation</li>
+                            </ul>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="edu-header">
+                                <h3>B.Tech Computer Science and Engineering</h3>
+                                <span class="duration">2018 – 2022</span>
+                            </div>
+                            <p class="institution">Christ University Bangalore, India</p>
+                            <p class="honors">Honors in Cybersecurity | GPA: 8.47/10 | First-Class Honors</p>
+                        </div>
+                    </div>
+
+                    <!-- Certifications Tab -->
+                    <div id="certifications-content" class="modal-tab-content">
+                        <div class="achievement-item">
+                            <h3>Professional Certifications</h3>
+                            <ul>
+                                <li><span class="first-letter">P</span>rompt Design in VertexAI (Google, 2025)</li>
+                                <li><span class="first-letter">C</span>LA C Programming Language (Cisco, 2019)</li>
+                            </ul>
+                        </div>
+
+                        <div class="achievement-item">
+                            <h3>Awards & Recognition</h3>
+                            <div class="achievement-header">
+                                <h4>Daksh Hackathon - Winner (1st Place)</h4>
+                                <span class="year">2020</span>
+                            </div>
+                            <p class="location">India</p>
+                            <p><span class="first-letter">D</span>eveloped "Blitzkrieg" payment system and won first place for innovation in offline payment solutions</p>
+                        </div>
+                    </div>
+
+                    <!-- Leadership Tab -->
+                    <div id="leadership-content" class="modal-tab-content">
+                        <div class="leadership-item">
+                            <div class="leadership-header">
+                                <h3>Graphic Design Team Head</h3>
+                                <span class="duration">2018 – 2021</span>
+                            </div>
+                            <p class="organization">Magnovite Annual College Fest, Christ University</p>
+                            <p><span class="first-letter">L</span>ed the creative vision for the annual fest for 3 consecutive years, managing a team of video editors/designers.</p>
+                        </div>
+
+                        <div class="leadership-item">
+                            <div class="leadership-header">
+                                <h3>Council Member</h3>
+                                <span class="duration">2018</span>
+                            </div>
+                            <p class="organization">University Student Council, Christ University</p>
+                            <p><span class="first-letter">L</span>ed student activities, organized leadership workshops, and voiced student concerns to university management.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Tab -->
+                    <div id="skills-content" class="modal-tab-content">
+                        <div class="skill-category">
+                            <h3>Languages</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Dart</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Frameworks & Technologies</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">.NET Core</span>
+                                <span class="skill-tag">Flutter</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">FastAPI</span>
+                                <span class="skill-tag">Redis</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Cloud & DevOps</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Azure DevOps</span>
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Snowflake</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Spoken Languages</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">English (Professional)</span>
+                                <span class="skill-tag">Malayalam (Native)</span>
+                                <span class="skill-tag">Hindi</span>
+                                <span class="skill-tag">Arabic</span>
+                                <span class="skill-tag">French</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <span>↑</span>
+    </button>
+
+    <!-- Loading Script -->
+    <script src="js/loading.js"></script>
+    <!-- Modal Scripts -->
+    <script src="js/experience-modal.js"></script>
+    <script src="js/education-modal.js"></script>
+    <!-- Animation Scripts -->
+    <script src="js/typing-animation.js"></script>
+    <!-- Utility Scripts -->
+    <script src="js/scroll-to-top.js"></script>
+</body>
+</html>
