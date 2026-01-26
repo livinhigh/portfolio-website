@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="styles/contact.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/transition.css">
+    <link rel="stylesheet" href="styles/timeline.css">
+    <link rel="stylesheet" href="styles/feature-sections.css">
+    <link rel="stylesheet" href="styles/achievement-modal.css">
     <!-- Responsive Styles -->
     <link rel="stylesheet" href="styles/responsive.css">
 </head>
@@ -36,11 +39,128 @@
         <section class="hero">
             <h1><span class="first-letter">I</span> am a <span id="typed-text"></span><span class="cursor">|</span></h1>
             <p class="subtitle"><span class="first-letter">B</span>uilding scalable AI-powered solutions | <span class="first-letter">D</span>ubai, UAE</p>
+            
+            <!-- Timeline Section (Inline) -->
+            <div class="timeline-container">
+                <div class="timeline-wrapper" id="timelineWrapper">
+                    <div class="timeline-track">
+                        <!-- 2017: GIC Winner -->
+                        <div class="timeline-item" data-event="achievement" onclick="handleTimelineClick('2017-gic')">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2017</div>
+                                <div class="timeline-month">February</div>
+                                <div class="timeline-label">Winner of 2017 GEMS Global Innovation Challenge</div>
+                            </div>
+                        </div>
+                        <!-- 2018: SF travel -->
+                        <div class="timeline-item" data-event="achievement" onclick="handleTimelineClick('2018-gic-travel')">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2017</div>
+                                <div class="timeline-month">August</div>
+                                <div class="timeline-label">Travelled to San Fransisco for Singularity University Global Summit 2017 as winners of GIC</div>
+                            </div>
+                        </div>
+                        <!-- 2018: School Complete -->
+                        <div class="timeline-item" data-event="education" onclick="handleTimelineClick('2018-school-complete')">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2018</div>
+                                <div class="timeline-month">April</div>
+                                <div class="timeline-label">Completed School</div>
+                            </div>
+                        </div>
+                        <!-- 2018: University Start -->
+                        <div class="timeline-item" data-event="education" onclick="handleTimelineClick('2018-start')">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2018</div>
+                                <div class="timeline-month">July</div>
+                                <div class="timeline-label">Started B.Tech</div>
+                            </div>
+                        </div>
+
+                        <!-- 2020: Hackathon & Peldano -->
+                        <div class="timeline-item" data-event="achievement" onclick="handleTimelineClick('2020-hackathon')">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2020</div>
+                                <div class="timeline-month">June</div>
+                                <div class="timeline-label">Daksh Hackathon Winner</div>
+                            </div>
+                        </div>
+
+                        <!-- 2020-2021: Peldano -->
+                        <div class="timeline-item" data-event="experience" onclick="handleTimelineClick('peldano')">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2020</div>
+                                <div class="timeline-month">Sept</div>
+                                <div class="timeline-label">Joined as a Tech Founding Engineer for Peldano</div>
+                            </div>
+                        </div>
+
+                        <!-- 2022: University Graduation -->
+                        <div class="timeline-item" data-event="education" onclick="handleTimelineClick('2022-graduation')">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2022</div>
+                                <div class="timeline-month">May</div>
+                                <div class="timeline-label">Graduated B.Tech</div>
+                            </div>
+                        </div>
+
+                        <!-- 2022-Present: CINDE AI / SymphonyAI -->
+                        <div class="timeline-item" data-event="experience" onclick="handleTimelineClick('cinde-ai')">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2022</div>
+                                <div class="timeline-month">Aug</div>
+                                <div class="timeline-label">Joined SymphonyAI as a Software Engineer</div>
+                            </div>
+                        </div>
+
+                        <!-- 2025: MSc Started -->
+                        <div class="timeline-item" data-event="education" onclick="handleTimelineClick('2025-msc')">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-month">Jan</div>
+                                <div class="timeline-label">Started MSc Program</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="hero-buttons">
                 <button class="hero-btn" onclick="openExperiencePage()">Professional Experience</button>
                 <button class="hero-btn" onclick="openEducationPage()">Education & Skills</button>
                 <button class="hero-btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">Projects & Achievements</button>
                 <button class="hero-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Me</button>
+            </div>
+        </section>
+
+        <!-- Expandable Image Sections -->
+        <section class="feature-sections">
+            <div class="feature-section" data-section="experience" onclick="openExperiencePage()">
+                <div class="feature-overlay">
+                    <h3>Professional Experience</h3>
+                    <p>Explore my career journey</p>
+                </div>
+            </div>
+            <div class="feature-section" data-section="education" onclick="openEducationPage()">
+                <div class="feature-overlay">
+                    <h3>Education & Skills</h3>
+                    <p>Discover my qualifications</p>
+                </div>
+            </div>
+            <div class="feature-section" data-section="projects" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                <div class="feature-overlay">
+                    <h3>Projects</h3>
+                    <p>View my work</p>
+                </div>
             </div>
         </section>
 
@@ -115,10 +235,19 @@
                 <div class="modal-body">
                     <div class="experience-item">
                         <div class="exp-header">
-                            <h3>Software Engineer (CINDE AI)</h3>
-                            <span class="duration">2022 - Present</span>
+                            <div class="exp-title-duration">
+                                <h3>Software Engineer (CINDE AI)</h3>
+                                <span class="duration">2022 - Present</span>
+                            </div>
+                            <a href="http://symphonyai.com/retail-cpg/cinde-ai" target="_blank" rel="noopener noreferrer" class="exp-company-box exp-company-link">
+                                <img src="assets/symphony.png" alt="SymphonyAI Logo" class="company-logo" />
+                                <span class="company-name">SymphonyAI</span>
+                            </a>
+                            <div class="exp-location-box">
+                                <span class="location-icon">📍</span>
+                                <span class="location-text">UAE / India</span>
+                            </div>
                         </div>
-                        <p class="company">SymphonyAI UAE / India</p>
                         <p class="company-desc">Global enterprise AI SaaS company serving retail and financial sectors</p>
                         <ul>
                             <li><span class="first-letter">O</span>wned and managed highly critical, scalable .NET APIs serving global retail clients, ensuring 99.9% uptime during peak high-traffic events.</li>
@@ -130,10 +259,19 @@
 
                     <div class="experience-item">
                         <div class="exp-header">
-                            <h3>Founding Engineer, Lead Software Developer</h3>
-                            <span class="duration">2020 - 2021</span>
+                            <div class="exp-title-duration">
+                                <h3>Founding Engineer, Lead Software Developer</h3>
+                                <span class="duration">2020 - 2021</span>
+                            </div>
+                            <a href="https://peldano.in" target="_blank" rel="noopener noreferrer" class="exp-company-box exp-company-link">
+                                <img src="assets/peldano.png" alt="Peldano Logo" class="company-logo" />
+                                <span class="company-name">Peldano</span>
+                            </a>
+                            <div class="exp-location-box">
+                                <span class="location-icon">🏠</span>
+                                <span class="location-text">Remote</span>
+                            </div>
                         </div>
-                        <p class="company">Peldano (Remote)</p>
                         <p class="company-desc">Hyper-local delivery startup ecosystem</p>
                         <ul>
                             <li><span class="first-letter">J</span>oined as the first Founding Engineer and rapidly scaled the product, eventually hiring and leading a 5-member cross-functional technical team.</li>
@@ -316,6 +454,116 @@
                 </div>
             </div>
         </div>
+
+        <!-- GEMS-Singularity University Modal -->
+        <div class="achievement-modal" id="gemsSUModal">
+            <div class="achievement-modal-content">
+                <div class="achievement-modal-header">
+                    <button class="close-achievement-modal" onclick="closeGemsSUModal()">&times;</button>
+                </div>
+                <div class="achievement-modal-body">
+                    <div class="achievement-logos">
+                        <img src="assets/gems.png" alt="GEMS Education Logo" class="achievement-logo" />
+                        <img src="assets/su.png" alt="Singularity University Logo" class="achievement-logo" />
+                    </div>
+                    
+                    <h2><span class="first-letter">G</span>EMS-Singularity University Global Innovation Challenge 2017</h2>
+                    <h3 class="achievement-subtitle">Singularity University Global Summit | San Francisco, CA</h3>
+                    
+                    <div class="achievement-content-wrapper">
+                        <div class="achievement-main-content">
+                            <div class="achievement-section">
+                                <p><span class="first-letter">T</span>his journey began as a grassroots initiative within our school and evolved into a global success story. Competing against a wide array of innovative student projects, our team of five developed a sustainable housing solution: portable, insulated cardboard homes designed to address the global refugee housing crisis. After securing the win at the intra-school level, we advanced to the GEMS-Singularity University Global Innovation Challenge, where we were named overall winners and received the People's Choice Award.</p>
+                                
+                                <p><span class="first-letter">A</span>s a result of this achievement, our team was awarded a fully sponsored trip to San Francisco to attend the Singularity University Global Summit 2017. This prestigious event served as a platform for us to exhibit our project at the Innovation Hub, where we pitched our prototype to international investors, industry-leading tech innovators, and global thought leaders focused on exponential technologies.</p>
+                            </div>
+                            
+                            <div class="achievement-section">
+                                <div class="achievement-gallery">
+                                    <div class="achievement-image-container">
+                                        <img src="assets/su1.jpg" alt="Presenting at Summit" class="achievement-image" />
+                                        <p class="image-caption">Exploring San Francisco with the Singularity University team</p>
+                                    </div>
+                                    <div class="achievement-image-container">
+                                        <img src="assets/su2.jpg" alt="With SU Team" class="achievement-image" />
+                                        <p class="image-caption">Met a bunch load of amazing innovators and thought leaders</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-sidebar">
+                            <div class="achievement-section">
+                                <div class="sidebar-header">
+                                    <h3><span class="first-letter">M</span>edia & Press</h3>
+                                    <button class="external-link-btn external-link-btn--outline" onclick="window.open('https://www.khaleejtimes.com/uae/education/dubai-students-cardboard-homes-to-solve-refugee-housing-crisis', '_blank')">
+                                        Read full article <span class="arrow">↗</span>
+                                    </button>
+                                </div>
+                                <div class="achievement-image-container">
+                                    <img src="assets/khaleej-times.JPG" alt="Khaleej Times Article" class="achievement-image" />
+                                    <p class="image-caption">Our team featured in the Khaleej Times for our work on the refugee housing crisis</p>
+                                </div>
+                                <p><span class="first-letter">R</span>ead the full article: Dubai students' cardboard homes to solve refugee housing crisis</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-links">
+                        <button class="external-link-btn external-link-btn--outline" onclick="window.open('https://www.su.org/', '_blank')">
+                            <span>🔗</span> Visit Singularity University
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daksh Hackathon Modal -->
+        <div class="achievement-modal" id="dakshModal">
+            <div class="achievement-modal-content">
+                <div class="achievement-modal-header">
+                    <button class="close-achievement-modal" onclick="closeDakshModal()">&times;</button>
+                </div>
+                <div class="achievement-modal-body">
+                    <div class="achievement-logos">
+                        <img src="assets/daksh.png" alt="Daksh" class="achievement-logo" />
+                    </div>
+                    <h2><span class="first-letter">D</span>aksh Hackathon 2020</h2>
+                    <h3 class="achievement-subtitle">SASTRA University – Thanjavur, Tamil Nadu</h3>
+                    
+                    <p class="achievement-intro"><span class="first-letter">R</span>epresenting Christ University (Bangalore Kengeri Campus), our team participated in the Daksh Hackathon 2020, a premier national-level competition hosted by SASTRA University.</p>
+                    
+                    <div class="achievement-content-wrapper">
+                        <div class="achievement-main-content">
+                            <div class="achievement-section">
+                                <h3><span class="first-letter">T</span>he Project</h3>
+                                <p><span class="first-letter">W</span>e developed a high-impact application designed to solve real-world challenges through efficient code and user-centric design. During the development phase, we focused on scalability and seamless integration, ensuring the app met the rigorous technical standards expected at a national level.</p>
+                            </div>
+                            
+                            <div class="achievement-section">
+                                <h3><span class="first-letter">T</span>he Evaluation</h3>
+                                <p><span class="first-letter">T</span>he competition was judged by a distinguished panel of experts, including industry professionals from PayPal and academic leaders from SASTRA University. Our project was evaluated on its technical architecture, problem-solving capabilities, and the viability of the final prototype.</p>
+                            </div>
+                            
+                            <div class="achievement-section">
+                                <h3><span class="first-letter">T</span>he Result</h3>
+                                <p><span class="first-letter">O</span>ut of numerous teams representing top-tier institutions across India, we were awarded <strong>First Place</strong>. This victory highlighted our team's ability to work under pressure, translate complex ideas into functional software, and represent Christ University at the highest level of national competition.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-sidebar">
+                            <div class="achievement-section">
+                                <h3><span class="first-letter">T</span>he Winning Team</h3>
+                                <div class="achievement-image-container">
+                                    <img src="assets/daksh.jpg" alt="Daksh 2020 Team" class="achievement-image" />
+                                    <p class="image-caption">The Christ University Kengeri Campus team celebrating the 1st place win at Daksh 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
@@ -327,6 +575,10 @@
     <!-- Modal Scripts -->
     <script src="js/experience-modal.js"></script>
     <script src="js/education-modal.js"></script>
+    <script src="js/gems-su-modal.js"></script>
+    <script src="js/daksh-modal.js"></script>
+    <!-- Timeline Script -->
+    <script src="js/timeline.js"></script>
     <!-- Animation Scripts -->
     <script src="js/typing-animation.js"></script>
     <!-- Utility Scripts -->

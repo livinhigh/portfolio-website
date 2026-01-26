@@ -95,3 +95,86 @@
 .modal-body .experience-item {
     margin-bottom: 30px;
 }
+.exp-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.exp-title-duration {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+}
+
+.exp-header h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    color: #EE2E31;
+}
+
+.duration {
+    color: #FFD700;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.exp-company-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 2px solid #EE2E31;
+    border-radius: 6px;
+    background-color: rgba(238, 46, 49, 0.05);
+    white-space: nowrap;
+}
+
+.exp-company-link {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.exp-company-link:hover {
+    background-color: rgba(238, 46, 49, 0.15);
+    border-color: #FFD700;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(238, 46, 49, 0.3);
+}
+
+.company-logo {
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+}
+
+.company-name {
+    color: #C9E4CA;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.exp-location-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 2px solid #EE2E31;
+    border-radius: 6px;
+    background-color: rgba(238, 46, 49, 0.05);
+    white-space: nowrap;
+}
+
+.location-icon {
+    font-size: 18px;
+}
+
+.location-text {
+    color: #C9E4CA;
+    font-weight: 500;
+    font-size: 0.95rem;
+}

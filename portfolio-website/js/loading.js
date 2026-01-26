@@ -48,7 +48,7 @@ async function loadTexts() {
 
     for (const line of lines.slice(1)) {
         appendLine(line);
-        await delay(120 + Math.random() * 1000);
+        await delay(120 + Math.random() * 20); //change this
     }
 
     loadingDiv.classList.add('fade');
