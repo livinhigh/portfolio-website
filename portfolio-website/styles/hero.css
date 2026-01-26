@@ -1,6 +1,5 @@
 /* Hero Section Styles */
 .hero {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
     text-align: center;
@@ -35,7 +34,7 @@
 }
 
 .hero-buttons {
-    display: flex;
+    display: none;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;

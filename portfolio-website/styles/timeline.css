@@ -1,0 +1,239 @@
+/* Timeline Section Styles */
+.timeline-section {
+    max-width: 100%;
+    padding: 60px 0;
+    background-color: #010001;
+    overflow: hidden;
+}
+
+.timeline-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #EE2E31;
+}
+
+/* Hero section timeline */
+.hero .timeline-container {
+    width: 100%;
+    margin: 40px 0;
+    padding: 0 20px;
+    position: relative;
+}
+
+.timeline-container {
+    width: 100%;
+    padding: 0 20px;    
+    position: relative;
+}
+
+.timeline-wrapper {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 40px 0;
+    scroll-behavior: smooth;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.timeline-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-track {
+    display: flex;
+    gap: 60px;
+    padding: 0 20px;
+    position: relative;
+    width: max-content;
+    align-items: start;
+}
+
+/* Horizontal dashed connecting line */
+.timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background-image: linear-gradient(90deg, #EE2E31 5px, transparent 5px);
+    background-size: 15px 2px;
+    background-repeat: repeat-x;
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 180px;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px);
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #EE2E31;
+    border: 3px solid #010001;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 0 rgba(238, 46, 49, 0.4);
+}
+
+.timeline-item:hover .timeline-dot {
+    width: 28px;
+    height: 28px;
+    box-shadow: 0 0 0 8px rgba(238, 46, 49, 0.2);
+}
+
+.timeline-content {
+    text-align: center;
+    background: rgba(238, 46, 49, 0.05);
+    border: 1px solid #EE2E31;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.timeline-item:hover .timeline-content {
+    background: rgba(238, 46, 49, 0.15);
+    border-color: #ff5555;
+    transform: scale(1.05);
+}
+
+.timeline-year {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #EE2E31;
+    margin-bottom: 5px;
+}
+
+.timeline-month {
+    font-size: 0.9rem;
+    color: #99CC99;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.timeline-label {
+    font-size: 1rem;
+    color: #C9E4CA;
+    font-weight: 500;
+}
+
+/* Timeline item type styling */
+.timeline-item[data-event="education"] .timeline-dot {
+    background: #EE2E31;
+}
+
+.timeline-item[data-event="experience"] .timeline-dot {
+    background: #EE2E31;
+}
+
+.timeline-item[data-event="achievement"] .timeline-dot {
+    background: #FFD700;
+    border-color: #010001;
+}
+
+.timeline-item[data-event="achievement"] .timeline-content {
+    border-color: #FFD700;
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.timeline-item[data-event="achievement"]:hover .timeline-content {
+    background: rgba(255, 215, 0, 0.15);
+    border-color: #FFD700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .timeline-track {
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .timeline-track::before {
+        left: 20px;
+        right: 20px;
+    }
+
+    .timeline-item {
+        width: 150px;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+
+    .timeline-year {
+        font-size: 1.2rem;
+    }
+
+    .timeline-month {
+        font-size: 0.85rem;
+    }
+
+    .timeline-label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-section {
+        padding: 40px 0;
+    }
+
+    .timeline-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .timeline-track {
+        gap: 30px;
+        padding: 0 10px;
+    }
+
+    .timeline-item {
+        width: 120px;
+    }
+
+    .timeline-content {
+        padding: 12px;
+    }
+
+    .timeline-year {
+        font-size: 1rem;
+    }
+
+    .timeline-month {
+        font-size: 0.75rem;
+    }
+
+    .timeline-label {
+        font-size: 0.8rem;
+    }
+}

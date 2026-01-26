@@ -1,0 +1,159 @@
+/* Expandable Feature Sections */
+.feature-sections {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: #010001;
+}
+
+.feature-section {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: flex 0.5s ease, clip-path 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Rhombus shapes using clip-path */
+/* Leftmost section - straight left, angled right */
+.feature-section[data-section="experience"] {
+    background-image: linear-gradient(135deg, rgba(238, 46, 49, 0.7), rgba(1, 0, 1, 0.8)),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23EE2E31" opacity="0.1" width="1200" height="400"/><circle cx="200" cy="100" r="80" fill="%23C9E4CA" opacity="0.1"/><circle cx="800" cy="250" r="120" fill="%23C9E4CA" opacity="0.1"/><circle cx="1000" cy="150" r="60" fill="%23C9E4CA" opacity="0.1"/></svg>');
+    clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 100%, 0 100%);
+}
+
+/* Middle section - angled both sides */
+.feature-section[data-section="education"] {
+    background-image: linear-gradient(135deg, rgba(201, 228, 202, 0.3), rgba(1, 0, 1, 0.8)),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%2399CC99" opacity="0.1" width="1200" height="400"/><polygon points="200,100 400,100 300,250" fill="%23EE2E31" opacity="0.1"/><polygon points="700,150 900,150 800,300" fill="%23EE2E31" opacity="0.1"/></svg>');
+    clip-path: polygon(40px 0, calc(100% - 40px) 0, 100% 100%, 0 100%);
+    margin-left: -40px;
+}
+
+/* Rightmost section - angled left, straight right */
+.feature-section[data-section="projects"] {
+    background-image: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(1, 0, 1, 0.8)),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23FFD700" opacity="0.1" width="1200" height="400"/><rect x="100" y="100" width="150" height="150" fill="%23EE2E31" opacity="0.1"/><rect x="500" y="150" width="200" height="100" fill="%23EE2E31" opacity="0.1"/><rect x="900" y="80" width="180" height="180" fill="%23EE2E31" opacity="0.1"/></svg>');
+    clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
+    margin-left: -40px;
+}
+
+/* Hover effect - expand the hovered section */
+.feature-section:hover {
+    flex: 2;
+}
+
+/* Overlay content */
+.feature-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 0, 1, 0.6);
+    transition: background 0.5s ease;
+    padding: 40px;
+    text-align: center;
+}
+
+.feature-section:hover .feature-overlay {
+    background: rgba(1, 0, 1, 0.4);
+}
+
+.feature-overlay h3 {
+    font-size: 2.5rem;
+    color: #EE2E31;
+    margin-bottom: 15px;
+    font-weight: 900;
+    opacity: 0.9;
+    transition: all 0.5s ease;
+}
+
+.feature-section:hover .feature-overlay h3 {
+    font-size: 3rem;
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+.feature-overlay p {
+    font-size: 1.2rem;
+    color: #C9E4CA;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.feature-section:hover .feature-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add subtle border between sections */
+.feature-section::after {
+    display: none;
+}
+
+.feature-section:last-child::after {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-sections {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .feature-section {
+        height: 200px;
+        clip-path: none !important;
+        margin-left: 0 !important;
+    }
+
+    .feature-section:hover {
+        flex: 1.5;
+    }
+
+    .feature-overlay h3 {
+        font-size: 2rem;
+    }
+
+    .feature-section:hover .feature-overlay h3 {
+        font-size: 2.3rem;
+    }
+
+    .feature-overlay p {
+        font-size: 1rem;
+    }
+
+    .feature-section::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-section {
+        height: 150px;
+    }
+
+    .feature-overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .feature-section:hover .feature-overlay h3 {
+        font-size: 1.8rem;
+    }
+
+    .feature-overlay p {
+        font-size: 0.9rem;
+    }
+
+    .feature-overlay {
+        padding: 20px;
+    }
+}
