@@ -67,13 +67,29 @@ document.addEventListener('DOMContentLoaded', function() {
             timelineWrapper.scrollLeft = scrollAmount;
         }, 30);
 
-        // Stop auto-scroll when user manually scrolls
-        timelineWrapper.addEventListener('wheel', function() {
+        // Horizontal scroll on hover with faster speed
+        timelineWrapper.addEventListener('wheel', function(e) {
             clearInterval(autoScrollInterval);
-        }, { once: true });
+            const maxScroll = timelineWrapper.scrollWidth - timelineWrapper.clientWidth;
+            const currentScroll = timelineWrapper.scrollLeft;
+            
+            // Check if we're at the beginning or end of horizontal scroll
+            const atStart = currentScroll <= 0;
+            const atEnd = currentScroll >= maxScroll;
+            
+            if ((e.deltaY > 0 && atEnd) || (e.deltaY < 0 && atStart)) {
+                // Allow vertical scrolling when at the ends
+                e.preventDefault();
+                window.scrollBy(0, e.deltaY);
+            } else {
+                // Horizontal scroll with faster speed
+                e.preventDefault();
+                timelineWrapper.scrollLeft += e.deltaY * 2;
+            }
+        }, { passive: false });
 
         timelineWrapper.addEventListener('touchstart', function() {
             clearInterval(autoScrollInterval);
-        }, { once: true });
+        });
     }
 });
