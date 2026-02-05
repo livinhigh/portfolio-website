@@ -1,38 +1,26 @@
 // Timeline interaction handler
-function handleTimelineClick(eventId) {
-    // Trigger transition modal
-    const transitionModal = document.getElementById('transitionModal');
-    transitionModal.classList.add('show');
-    
-    // After closing animation, remove overlay
-    setTimeout(() => {       
-        // Handle different timeline events
-        switch(eventId) {
-            case '2017-gic':
-            case '2018-gic-travel':
-                openGemsSUModal();
-                break;
-            case '2018-start':
-            case '2022-graduation':
-            case '2025-msc':
-                openEducationPage();
-                break;
-            case '2020-hackathon':
-                openDakshModal();
-                break;
-            case 'peldano':
-            case 'cinde-ai':
-                openExperiencePage();
-                break;
-            default:
-                break;
-        } // Match transition animation duration
-        transitionModal.classList.remove('show');
-        transitionModal.classList.add('closing');
-        setTimeout(() => {
-            transitionModal.classList.remove('closing');
-        }, 350);
-    }, 350);
+function handleTimelineClick(eventId) { 
+    // Handle different timeline events
+    switch(eventId) {
+        case '2017-gic':
+        case '2018-gic-travel':
+            openGemsSUModal();
+            break;
+        case '2018-start':
+        case '2022-graduation':
+        case '2025-msc':
+            openEducationPage();
+            break;
+        case '2020-hackathon':
+            openDakshModal();
+            break;
+        case 'peldano':
+        case 'cinde-ai':
+            openExperiencePage();
+            break;
+        default:
+            break;
+    } 
 }
 
 // Timeline auto-scroll animation

@@ -72,16 +72,6 @@
                                 <div class="timeline-label">Completed School</div>
                             </div>
                         </div>
-                        <!-- 2018: University Start -->
-                        <div class="timeline-item" data-event="education" onclick="handleTimelineClick('2018-start')">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-year">2018</div>
-                                <div class="timeline-month">July</div>
-                                <div class="timeline-label">Started B.Tech</div>
-                            </div>
-                        </div>
-
                         <!-- 2020: Hackathon & Peldano -->
                         <div class="timeline-item" data-event="achievement" onclick="handleTimelineClick('2020-hackathon')">
                             <div class="timeline-dot"></div>
@@ -113,7 +103,7 @@
                         </div>
 
                         <!-- 2022-Present: CINDE AI / SymphonyAI -->
-                        <div class="timeline-item" data-event="experience" onclick="handleTimelineClick('cinde-ai')">
+                        <div class="timeline-item timeline-item--loading" data-event="experience" onclick="handleTimelineClick('cinde-ai')">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <div class="timeline-year">2022</div>
@@ -123,12 +113,12 @@
                         </div>
 
                         <!-- 2025: MSc Started -->
-                        <div class="timeline-item" data-event="education" onclick="handleTimelineClick('2025-msc')">
+                        <div class="timeline-item timeline-item--loading" data-event="education" onclick="handleTimelineClick('2025-msc')">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <div class="timeline-year">2025</div>
                                 <div class="timeline-month">Jan</div>
-                                <div class="timeline-label">Started MSc Program</div>
+                                <div class="timeline-label">Started MSc Data Science and AI @Middlesex Dubai</div>
                             </div>
                         </div>
                     </div>
@@ -258,91 +248,57 @@
                     <button class="close-modal" onclick="closeExperiencePage()">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="experience-item">
-                        <div class="exp-header">
-                            <div class="exp-title-duration">
-                                <h3>Software Engineer (CINDE AI)</h3>
-                                <span class="duration">2022 - Present</span>
-                            </div>
-                            <a href="http://symphonyai.com/retail-cpg/cinde-ai" target="_blank" rel="noopener noreferrer" class="exp-company-box exp-company-link">
-                                <img src="assets/symphony.png" alt="SymphonyAI Logo" class="company-logo" />
-                                <span class="company-name">SymphonyAI</span>
-                            </a>
-                            <div class="exp-location-box">
-                                <span class="location-icon">📍</span>
-                                <span class="location-text">UAE / India</span>
+                    <div class="experience-panels">
+                        <div class="experience-panel" data-company="symphonyai">
+                            <div class="experience-overlay">
+                                <h3>Software Engineer (CINDE AI) @SymphonyAI </h3>
+                                <div class="experience-details">
+                                    <div class="experience-meta">
+                                        <span class="duration">2022 - Present</span>
+                                        <a href="http://symphonyai.com/retail-cpg/cinde-ai" target="_blank" rel="noopener noreferrer" class="exp-company-box exp-company-link">
+                                            <img src="assets/symphony.png" alt="SymphonyAI Logo" class="company-logo" />
+                                            <span class="company-name">SymphonyAI</span>
+                                        </a>
+                                        <div class="exp-location-box">
+                                            <span class="location-icon">📍</span>
+                                            <span class="location-text">UAE / India</span>
+                                        </div>
+                                    </div>
+                                    <p class="company-desc">Global enterprise AI SaaS company serving retail and financial sectors</p>
+                                    <ul>
+                                        <li><span class="first-letter">O</span>wned and managed highly critical, scalable .NET APIs serving global retail clients, ensuring 99.9% uptime during peak high-traffic events.</li>
+                                        <li><span class="first-letter">E</span>ngineered an infinitely customizable dashboard, reducing data computation time by 60% (from 10s to 4s) through dynamic SQL generation and prebatching techniques in Snowflake.</li>
+                                        <li><span class="first-letter">A</span>utomated manual deployment pipelines, reducing release cycle time from 4 hours to 15 minutes using Powershell and Python.</li>
+                                        <li><span class="first-letter">R</span>edesigned backend retrieval systems using Redis caching strategies, improving customer-facing application speed by 90%.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <p class="company-desc">Global enterprise AI SaaS company serving retail and financial sectors</p>
-                        <ul>
-                            <li><span class="first-letter">O</span>wned and managed highly critical, scalable .NET APIs serving global retail clients, ensuring 99.9% uptime during peak high-traffic events.</li>
-                            <li><span class="first-letter">E</span>ngineered an infinitely customizable dashboard, reducing data computation time by 60% (from 10s to 4s) through dynamic SQL generation and prebatching techniques in Snowflake.</li>
-                            <li><span class="first-letter">A</span>utomated manual deployment pipelines, reducing release cycle time from 4 hours to 15 minutes using Powershell and Python.</li>
-                            <li><span class="first-letter">R</span>edesigned backend retrieval systems using Redis caching strategies, improving customer-facing application speed by 90%.</li>
-                        </ul>
-                    </div>
 
-                    <div class="experience-item">
-                        <div class="exp-header">
-                            <div class="exp-title-duration">
-                                <h3>Founding Engineer, Lead Software Developer</h3>
-                                <span class="duration">2020 - 2021</span>
+                        <div class="experience-panel" data-company="peldano">
+                            <div class="experience-overlay">
+                                <h3>Founding Engineer, Lead Software Developer @Peldano</h3>
+                                <div class="experience-details">
+                                    <div class="experience-meta">
+                                        <span class="duration">2020 - 2021</span>
+                                        <a href="https://peldano.in" target="_blank" rel="noopener noreferrer" class="exp-company-box exp-company-link">
+                                            <img src="assets/peldano.png" alt="Peldano Logo" class="company-logo" />
+                                            <span class="company-name">Peldano</span>
+                                        </a>
+                                        <div class="exp-location-box">
+                                            <span class="location-icon">🏠</span>
+                                            <span class="location-text">Remote</span>
+                                        </div>
+                                    </div>
+                                    <p class="company-desc">Hyper-local delivery startup ecosystem</p>
+                                    <ul>
+                                        <li><span class="first-letter">J</span>oined as the first Founding Engineer and rapidly scaled the product, eventually hiring and leading a 5-member cross-functional technical team.</li>
+                                        <li><span class="first-letter">A</span>rchitected using Flutter and NodeJs a robust multi-platform delivery ecosystem (iOS, Android, Web) that successfully scaled to support 500,000+ active users.</li>
+                                        <li><span class="first-letter">O</span>ptimized critical logistics algorithms for Delivery Agent Matching and Geospatial Distance Calculation, reducing delivery assignment latency and improving fleet utilization.</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <a href="https://peldano.in" target="_blank" rel="noopener noreferrer" class="exp-company-box exp-company-link">
-                                <img src="assets/peldano.png" alt="Peldano Logo" class="company-logo" />
-                                <span class="company-name">Peldano</span>
-                            </a>
-                            <div class="exp-location-box">
-                                <span class="location-icon">🏠</span>
-                                <span class="location-text">Remote</span>
-                            </div>
                         </div>
-                        <p class="company-desc">Hyper-local delivery startup ecosystem</p>
-                        <ul>
-                            <li><span class="first-letter">J</span>oined as the first Founding Engineer and rapidly scaled the product, eventually hiring and leading a 5-member cross-functional technical team.</li>
-                            <li><span class="first-letter">A</span>rchitected using Flutter and NodeJs a robust multi-platform delivery ecosystem (iOS, Android, Web) that successfully scaled to support 500,000+ active users.</li>
-                            <li><span class="first-letter">O</span>ptimized critical logistics algorithms for Delivery Agent Matching and Geospatial Distance Calculation, reducing delivery assignment latency and improving fleet utilization.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Professional Experience Modal -->
-        <div class="modal" id="experienceModal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2><span class="first-letter">P</span>rofessional Experience</h2>
-                    <button class="close-modal" onclick="closeExperiencePage()">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="experience-item">
-                        <div class="exp-header">
-                            <h3>Software Engineer (CINDE AI)</h3>
-                            <span class="duration">2022 - Present</span>
-                        </div>
-                        <p class="company">SymphonyAI UAE / India</p>
-                        <p class="company-desc">Global enterprise AI SaaS company serving retail and financial sectors</p>
-                        <ul>
-                            <li><span class="first-letter">O</span>wned and managed highly critical, scalable .NET APIs serving global retail clients, ensuring 99.9% uptime during peak high-traffic events.</li>
-                            <li><span class="first-letter">E</span>ngineered an infinitely customizable dashboard, reducing data computation time by 60% (from 10s to 4s) through dynamic SQL generation and prebatching techniques in Snowflake.</li>
-                            <li><span class="first-letter">A</span>utomated manual deployment pipelines, reducing release cycle time from 4 hours to 15 minutes using Powershell and Python.</li>
-                            <li><span class="first-letter">R</span>edesigned backend retrieval systems using Redis caching strategies, improving customer-facing application speed by 90%.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="exp-header">
-                            <h3>Founding Engineer, Lead Software Developer</h3>
-                            <span class="duration">2020 - 2021</span>
-                        </div>
-                        <p class="company">Peldano (Remote)</p>
-                        <p class="company-desc">Hyper-local delivery startup ecosystem</p>
-                        <ul>
-                            <li><span class="first-letter">J</span>oined as the first Founding Engineer and rapidly scaled the product, eventually hiring and leading a 5-member cross-functional technical team.</li>
-                            <li><span class="first-letter">A</span>rchitected using Flutter and NodeJs a robust multi-platform delivery ecosystem (iOS, Android, Web) that successfully scaled to support 500,000+ active users.</li>
-                            <li><span class="first-letter">O</span>ptimized critical logistics algorithms for Delivery Agent Matching and Geospatial Distance Calculation, reducing delivery assignment latency and improving fleet utilization.</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -355,124 +311,133 @@
                     <h2><span class="first-letter">E</span>ducation & <span class="first-letter">S</span>kills</h2>
                     <button class="close-education-modal" onclick="closeEducationPage()">&times;</button>
                 </div>
-
-                <!-- Tab Navigation -->
-                <div class="modal-tabs">
-                    <button class="modal-tab active" data-tab="education-content">Education</button>
-                    <button class="modal-tab" data-tab="certifications-content">Certifications</button>
-                    <button class="modal-tab" data-tab="leadership-content">Leadership</button>
-                    <button class="modal-tab" data-tab="skills-content">Tech Stack</button>
-                </div>
-
                 <div class="education-modal-body">
-                    <!-- Education Tab -->
-                    <div id="education-content" class="modal-tab-content active">
-                        <div class="education-item">
-                            <div class="edu-header">
-                                <h3>MSc Data Science and Artificial Intelligence</h3>
-                                <span class="duration">2025 – 2026 (Currently Pursuing)</span>
-                            </div>
-                            <p class="institution">Middlesex University Dubai, UAE</p>
-                            <ul>
-                                <li><span class="first-letter">S</span>pecialization: Intelligence in Software Systems using AI</li>
-                                <li><span class="first-letter">O</span>n track to receive UAE Golden Visa upon graduation</li>
-                            </ul>
-                        </div>
+                    <div class="education-panels">
+                        <div class="education-panel" data-section="education">
+                            <div class="education-overlay">
+                                <h3>Education</h3>
+                                <div class="education-details">
+                                    <div class="education-item">
+                                        <div class="edu-header">
+                                            <h4>MSc Data Science and Artificial Intelligence</h4>
+                                            <span class="duration">2025 – 2026 (Currently Pursuing)</span>
+                                        </div>
+                                        <p class="institution">Middlesex University Dubai, UAE</p>
+                                        <ul>
+                                            <li><span class="first-letter">S</span>pecialization: Intelligence in Software Systems using AI</li>
+                                            <li><span class="first-letter">O</span>n track to receive UAE Golden Visa upon graduation</li>
+                                        </ul>
+                                    </div>
 
-                        <div class="education-item">
-                            <div class="edu-header">
-                                <h3>B.Tech Computer Science and Engineering</h3>
-                                <span class="duration">2018 – 2022</span>
-                            </div>
-                            <p class="institution">Christ University Bangalore, India</p>
-                            <p class="honors">Honors in Cybersecurity | GPA: 8.47/10 | First-Class Honors</p>
-                        </div>
-                    </div>
-
-                    <!-- Certifications Tab -->
-                    <div id="certifications-content" class="modal-tab-content">
-                        <div class="achievement-item">
-                            <h3>Professional Certifications</h3>
-                            <ul>
-                                <li><span class="first-letter">P</span>rompt Design in VertexAI (Google, 2025)</li>
-                                <li><span class="first-letter">C</span>LA C Programming Language (Cisco, 2019)</li>
-                            </ul>
-                        </div>
-
-                        <div class="achievement-item">
-                            <h3>Awards & Recognition</h3>
-                            <div class="achievement-header">
-                                <h4>Daksh Hackathon - Winner (1st Place)</h4>
-                                <span class="year">2020</span>
-                            </div>
-                            <p class="location">India</p>
-                            <p><span class="first-letter">D</span>eveloped "Blitzkrieg" payment system and won first place for innovation in offline payment solutions</p>
-                        </div>
-                    </div>
-
-                    <!-- Leadership Tab -->
-                    <div id="leadership-content" class="modal-tab-content">
-                        <div class="leadership-item">
-                            <div class="leadership-header">
-                                <h3>Graphic Design Team Head</h3>
-                                <span class="duration">2018 – 2021</span>
-                            </div>
-                            <p class="organization">Magnovite Annual College Fest, Christ University</p>
-                            <p><span class="first-letter">L</span>ed the creative vision for the annual fest for 3 consecutive years, managing a team of video editors/designers.</p>
-                        </div>
-
-                        <div class="leadership-item">
-                            <div class="leadership-header">
-                                <h3>Council Member</h3>
-                                <span class="duration">2018</span>
-                            </div>
-                            <p class="organization">University Student Council, Christ University</p>
-                            <p><span class="first-letter">L</span>ed student activities, organized leadership workshops, and voiced student concerns to university management.</p>
-                        </div>
-                    </div>
-
-                    <!-- Tech Stack Tab -->
-                    <div id="skills-content" class="modal-tab-content">
-                        <div class="skill-category">
-                            <h3>Languages</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">C#</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Dart</span>
-                                <span class="skill-tag">SQL</span>
-                                <span class="skill-tag">JavaScript</span>
+                                    <div class="education-item">
+                                        <div class="edu-header">
+                                            <h4>B.Tech Computer Science and Engineering</h4>
+                                            <span class="duration">2018 – 2022</span>
+                                        </div>
+                                        <p class="institution">Christ University Bangalore, India</p>
+                                        <p class="honors">Honors in Cybersecurity | GPA: 8.47/10 | First-Class Honors</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="skill-category">
-                            <h3>Frameworks & Technologies</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">.NET Core</span>
-                                <span class="skill-tag">Flutter</span>
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">FastAPI</span>
-                                <span class="skill-tag">Redis</span>
+                        <div class="education-panel" data-section="certifications">
+                            <div class="education-overlay">
+                                <h3>Certifications</h3>
+                                <div class="education-details">
+                                    <div class="achievement-item">
+                                        <h4>Professional Certifications</h4>
+                                        <ul>
+                                            <li><span class="first-letter">P</span>rompt Design in VertexAI (Google, 2025)</li>
+                                            <li><span class="first-letter">C</span>LA C Programming Language (Cisco, 2019)</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="achievement-item">
+                                        <h4>Awards & Recognition</h4>
+                                        <div class="achievement-header">
+                                            <h5>Daksh Hackathon - Winner (1st Place)</h5>
+                                            <span class="year">2020</span>
+                                        </div>
+                                        <p class="location">India</p>
+                                        <p><span class="first-letter">D</span>eveloped "Blitzkrieg" payment system and won first place for innovation in offline payment solutions</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="skill-category">
-                            <h3>Cloud & DevOps</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Azure DevOps</span>
-                                <span class="skill-tag">AWS</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Snowflake</span>
+                        <div class="education-panel" data-section="leadership">
+                            <div class="education-overlay">
+                                <h3>Leadership</h3>
+                                <div class="education-details">
+                                    <div class="leadership-item">
+                                        <div class="leadership-header">
+                                            <h4>Graphic Design Team Head</h4>
+                                            <span class="duration">2018 – 2021</span>
+                                        </div>
+                                        <p class="organization">Magnovite Annual College Fest, Christ University</p>
+                                        <p><span class="first-letter">L</span>ed the creative vision for the annual fest for 3 consecutive years, managing a team of video editors/designers.</p>
+                                    </div>
+
+                                    <div class="leadership-item">
+                                        <div class="leadership-header">
+                                            <h4>Council Member</h4>
+                                            <span class="duration">2018</span>
+                                        </div>
+                                        <p class="organization">University Student Council, Christ University</p>
+                                        <p><span class="first-letter">L</span>ed student activities, organized leadership workshops, and voiced student concerns to university management.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="skill-category">
-                            <h3>Spoken Languages</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">English (Professional)</span>
-                                <span class="skill-tag">Malayalam (Native)</span>
-                                <span class="skill-tag">Hindi</span>
-                                <span class="skill-tag">Arabic</span>
-                                <span class="skill-tag">French</span>
+                        <div class="education-panel" data-section="skills">
+                            <div class="education-overlay">
+                                <h3>Tech Stack</h3>
+                                <div class="education-details">
+                                    <div class="skill-category">
+                                        <h4>Languages</h4>
+                                        <div class="skill-tags">
+                                            <span class="skill-tag">C#</span>
+                                            <span class="skill-tag">Python</span>
+                                            <span class="skill-tag">Dart</span>
+                                            <span class="skill-tag">SQL</span>
+                                            <span class="skill-tag">JavaScript</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skill-category">
+                                        <h4>Frameworks & Technologies</h4>
+                                        <div class="skill-tags">
+                                            <span class="skill-tag">.NET Core</span>
+                                            <span class="skill-tag">Flutter</span>
+                                            <span class="skill-tag">Node.js</span>
+                                            <span class="skill-tag">FastAPI</span>
+                                            <span class="skill-tag">Redis</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skill-category">
+                                        <h4>Cloud & DevOps</h4>
+                                        <div class="skill-tags">
+                                            <span class="skill-tag">Azure DevOps</span>
+                                            <span class="skill-tag">AWS</span>
+                                            <span class="skill-tag">Docker</span>
+                                            <span class="skill-tag">Snowflake</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skill-category">
+                                        <h4>Spoken Languages</h4>
+                                        <div class="skill-tags">
+                                            <span class="skill-tag">English (Professional)</span>
+                                            <span class="skill-tag">Malayalam (Native)</span>
+                                            <span class="skill-tag">Hindi</span>
+                                            <span class="skill-tag">Arabic</span>
+                                            <span class="skill-tag">French</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

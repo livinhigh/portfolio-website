@@ -23,14 +23,14 @@
 .feature-section[data-section="experience"] {
     background-image: linear-gradient(135deg, rgba(238, 46, 49, 0.7), rgba(1, 0, 1, 0.8)),
                       url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23EE2E31" opacity="0.1" width="1200" height="400"/><circle cx="200" cy="100" r="80" fill="%23C9E4CA" opacity="0.1"/><circle cx="800" cy="250" r="120" fill="%23C9E4CA" opacity="0.1"/><circle cx="1000" cy="150" r="60" fill="%23C9E4CA" opacity="0.1"/></svg>');
-    clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
 }
 
 /* Middle section - angled both sides */
 .feature-section[data-section="education"] {
     background-image: linear-gradient(135deg, rgba(201, 228, 202, 0.3), rgba(1, 0, 1, 0.8)),
                       url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%2399CC99" opacity="0.1" width="1200" height="400"/><polygon points="200,100 400,100 300,250" fill="%23EE2E31" opacity="0.1"/><polygon points="700,150 900,150 800,300" fill="%23EE2E31" opacity="0.1"/></svg>');
-    clip-path: polygon(40px 0, calc(100% - 40px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(40px 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
     margin-left: -40px;
 }
 
