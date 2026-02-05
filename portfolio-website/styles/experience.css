@@ -49,9 +49,9 @@
 }
 
 .modal-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 40px 40px;
+    max-width: 100%;
+    margin: 0;
+    padding: 60px 0 40px;
 }
 
 .modal-header {
@@ -61,6 +61,8 @@
     margin-bottom: 40px;
     border-bottom: 2px solid #EE2E31;
     padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .modal-header h2 {
@@ -90,6 +92,125 @@
 
 .modal-body {
     padding: 20px 0;
+}
+
+#experienceModal .modal-header {
+    margin-bottom: 0;
+}
+
+#experienceModal .modal-body {
+    padding-top: 0;
+}
+
+/* Experience expandable panels */
+.experience-panels {
+    display: flex;
+    width: 100%;
+    min-height: 360px;
+    height: calc(100vh - 260px);
+    gap: 0;
+    overflow: hidden;
+    background: #010001;
+}
+
+.experience-panel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    transition: flex 0.5s ease, transform 0.4s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.experience-panel[data-company="symphonyai"] {
+    background-image: linear-gradient(135deg, rgba(238, 46, 49, 0.75), rgba(1, 0, 1, 0.85)),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23010001" width="1200" height="800"/><circle cx="240" cy="220" r="140" fill="%23EE2E31" opacity="0.15"/><circle cx="900" cy="520" r="220" fill="%23C9E4CA" opacity="0.12"/><rect x="520" y="140" width="320" height="320" fill="%23EE2E31" opacity="0.08"/></svg>');
+    clip-path: polygon(0 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+}
+
+.experience-panel[data-company="peldano"] {
+    background-image: linear-gradient(135deg, rgba(201, 228, 202, 0.35), rgba(1, 0, 1, 0.85)),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23010001" width="1200" height="800"/><polygon points="120,120 520,120 320,420" fill="%2399CC99" opacity="0.12"/><polygon points="720,220 1120,220 920,560" fill="%23EE2E31" opacity="0.12"/><circle cx="920" cy="160" r="80" fill="%23C9E4CA" opacity="0.1"/></svg>');
+    clip-path: polygon(50px 0, 100% 0, 100% 100%, 0 100%);
+    margin-left: -50px;
+    z-index: 0;
+}
+
+.experience-panel:hover {
+    flex: 2;
+    transform: translateY(-6px);
+}
+
+.experience-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px;
+    background: rgba(1, 0, 1, 0.6);
+    transition: background 0.4s ease;
+}
+
+.experience-panel:hover .experience-overlay {
+    background: rgba(1, 0, 1, 0.4);
+}
+
+.experience-overlay h3 {
+    margin: 0 0 12px 0;
+    font-size: 2rem;
+    color: #EE2E31;
+    font-weight: 900;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.experience-details {
+    opacity: 0;
+    transform: translateY(20px);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.experience-panel:hover .experience-details {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 600px;
+}
+
+.experience-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+    .experience-panels {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .experience-panel {
+        min-height: 320px;
+        clip-path: none !important;
+        margin-left: 0 !important;
+    }
+
+    .experience-panel:hover {
+        flex: 1.2;
+    }
+
+    .experience-details {
+        opacity: 1;
+        transform: none;
+        max-height: none;
+    }
 }
 
 .modal-body .experience-item {

@@ -1,11 +1,23 @@
 // Daksh Modal Functions
 function openDakshModal() {
-    const modal = document.getElementById('dakshModal');
-    if (modal) {
+    
+    // Trigger transition modal
+    const transitionModal = document.getElementById('transitionModal');
+    transitionModal.classList.add('show');
+    
+    setTimeout(() => {
+        const modal = document.getElementById('dakshModal');
         modal.style.display = 'block';
-        modal.classList.add('show');
         document.body.style.overflow = 'hidden';
-    }
+        
+        setTimeout(() => {
+            transitionModal.classList.remove('show');
+            transitionModal.classList.add('closing');
+            setTimeout(() => {
+                transitionModal.classList.remove('closing');
+            }, 350);
+        }, 350);
+    }, 350);
 }
 
 function closeDakshModal() {

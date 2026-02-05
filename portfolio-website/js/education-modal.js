@@ -1,9 +1,23 @@
 // Education & Skills Modal Functions
 function openEducationPage() {
-    const modal = document.getElementById('educationModal');
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    setupModalTabs();
+    // Trigger transition modal
+    const transitionModal = document.getElementById('transitionModal');
+    transitionModal.classList.add('show');
+    
+    setTimeout(() => {
+        const modal = document.getElementById('educationModal');
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        setupModalTabs();
+        setTimeout(() => {
+            // Match transition animation duration
+            transitionModal.classList.remove('show');
+            transitionModal.classList.add('closing');
+            setTimeout(() => {
+                transitionModal.classList.remove('closing');
+            }, 350);
+        }, 350);
+    }, 350);
 }
 
 function closeEducationPage() {

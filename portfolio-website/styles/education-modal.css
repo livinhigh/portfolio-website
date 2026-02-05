@@ -41,18 +41,20 @@
 }
 
 .education-modal-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 40px 40px;
+    max-width: 100%;
+    margin: 0;
+    padding: 60px 0 40px;
 }
 
 .education-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 0;
     border-bottom: 2px solid #EE2E31;
     padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .education-modal-header h2 {
@@ -82,13 +84,112 @@
 }
 
 .education-modal-body {
-    padding: 20px 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    min-height: 360px;
+    height: calc(100vh - 260px);
+    gap: 0;
+    overflow: hidden;
+    background: #010001;
 }
 
 .education-modal-body .education-item,
 .education-modal-body .leadership-item,
 .education-modal-body .skill-category {
     margin-bottom: 30px;
+}
+
+/* Education expandable panels */
+.education-panels {
+    display: flex;
+    width: 100%;
+    gap: 0;
+}
+
+.education-panel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    transition: flex 0.5s ease, transform 0.4s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.education-panel[data-section="education"] {
+    background-image: linear-gradient(135deg, rgba(238, 46, 49, 0.75), rgba(1, 0, 1, 0.85)),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23010001" width="1200" height="800"/><circle cx="240" cy="220" r="140" fill="%23EE2E31" opacity="0.15"/><circle cx="900" cy="520" r="220" fill="%23C9E4CA" opacity="0.12"/><rect x="520" y="140" width="320" height="320" fill="%23EE2E31" opacity="0.08"/></svg>');
+    clip-path: polygon(0 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+}
+
+.education-panel[data-section="certifications"] {
+    background-image: linear-gradient(135deg, rgba(201, 228, 202, 0.35), rgba(1, 0, 1, 0.85)),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23010001" width="1200" height="800"/><polygon points="120,120 520,120 320,420" fill="%2399CC99" opacity="0.12"/><polygon points="720,220 1120,220 920,560" fill="%23EE2E31" opacity="0.12"/><circle cx="920" cy="160" r="80" fill="%23C9E4CA" opacity="0.1"/></svg>');
+    clip-path: polygon(50px 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+    margin-left: -50px;
+    z-index: 1;
+}
+
+.education-panel[data-section="leadership"] {
+    background-image: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(1, 0, 1, 0.85)),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23010001" width="1200" height="800"/><polygon points="150,150 450,150 300,350" fill="%23FFD700" opacity="0.12"/><polygon points="700,200 950,200 850,400" fill="%23EE2E31" opacity="0.1"/></svg>');
+    clip-path: polygon(50px 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+    margin-left: -50px;
+    z-index: 1;
+}
+
+.education-panel[data-section="skills"] {
+    background-image: linear-gradient(135deg, rgba(201, 228, 202, 0.3), rgba(1, 0, 1, 0.85)),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23010001" width="1200" height="800"/><circle cx="300" cy="300" r="100" fill="%23C9E4CA" opacity="0.12"/><rect x="700" y="200" width="250" height="250" fill="%23EE2E31" opacity="0.1"/></svg>');
+    clip-path: polygon(50px 0, 100% 0, 100% 100%, 0 100%);
+    margin-left: -50px;
+    z-index: 0;
+}
+
+.education-panel:hover {
+    flex: 2;
+    transform: translateY(-6px);
+}
+
+.education-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px;
+    background: rgba(1, 0, 1, 0.6);
+    transition: background 0.4s ease;
+}
+
+.education-panel:hover .education-overlay {
+    background: rgba(1, 0, 1, 0.4);
+}
+
+.education-overlay h3 {
+    margin: 0 0 12px 0;
+    font-size: 2rem;
+    color: #EE2E31;
+    font-weight: 900;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.education-details {
+    opacity: 0;
+    transform: translateY(20px);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.education-panel:hover .education-details {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 600px;
 }
 
 /* Modal Tab Navigation */
